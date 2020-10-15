@@ -1,0 +1,24 @@
+body {
+  background-color: #ccc;
+}
+
+tr,
+td {
+  border: 1px solid black;
+  text-align: center;
+}
+td {
+  background-color: rgb(130, 233, 130);
+  height: 30px;
+}
+
+td:hover {
+  background-color: rgb(126, 230, 41);
+}
+
+table {
+  margin: auto;
+  margin-top: 10px;
+  width: 75%;
+  height: 20px;
+}
