@@ -12,15 +12,25 @@ function makeTable(table, rows, cells, content) {
 }
 document.getElementById("table").appendChild(makeTable(null, 10, 10, " "));
 
-var table = document.getElementById("table");
-for (var i = 0; i < table.rows.length; i++) {
-  table.rows[i].addEventListener("click", function () {
-    var msg = "Selected Cell: ";
-    for (var j = 0; j < this.cells.length; j++) {
-      msg += this.cells[j].innerHTML;
-    }
-    alert(msg);
+function selectCell(table) {
+  var table = document.getElementById("table");
+  for (var i = 0; i < table.rows.length; i++) {
+    table.rows[i].addEventListener("click", function () {
+      var msg = "Selected Cell: ";
+      for (var j = 0; j < this.cells.length; j++) {
+        msg += this.cells[j].innerHTML;
+      }
+    });
+  } 
+} 
+
+function showResult(result) {
+  var table = document.getElementById("table");
+  table.addEventListener("click", function () {
+    var result = document.getElementById("result");
+    result.innerHTML;
   });
+  return(result);
 }
 
 // var table = document.getElementById('table');
