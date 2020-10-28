@@ -1,6 +1,6 @@
 anychart.onDocumentReady(function () {
 
-  const data1 = [
+  const cust1 = [
     { x: "Question 1", value: 2 },
     { x: "Question 2", value: 5 },
     { x: "Question 3", value: 8 },
@@ -13,7 +13,7 @@ anychart.onDocumentReady(function () {
     { x: "Question 10", value: 9 },
   ];
 
-  const data2 = [
+  const cust2 = [
     { x: "Question 1", value: 8 },
     { x: "Question 2", value: 3 },
     { x: "Question 3", value: 6 },
@@ -32,8 +32,8 @@ anychart.onDocumentReady(function () {
   chart.yScale().minimum(0).maximum(10).ticks({ interval: 2 });
 
   // create first series
-  chart.line(data1);
-  chart.line(data2);
+  chart.line(cust1);
+  chart.line(cust2);
 
   // set container id for the chart
   chart.container("container");

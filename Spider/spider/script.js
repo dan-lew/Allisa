@@ -1,37 +1,85 @@
-function makeTable(table, rows, cells, content) {
-  if (!table) table = document.createElement("table");
-  for (var i = 0; i < rows; ++i) {
-    var row = document.createElement("tr");
-    for (var j = 0; j < cells; ++j) {
-      row.appendChild(document.createElement("td"));
-      row.cells[j].appendChild(document.createTextNode(content + (i + 1)));
-    }
-    table.appendChild(row);
+select();
+function select() {
+  var table = document.getElementById("table");
+  var cells = table.getElementsByTagName("td", "th");
+
+  for (var i = 0; i < cells.length; i++) {
+    var cell = cells[i];
+
+    cell.onclick = function () {
+      var rowId = this.parentNode.rowIndex;
+      var questionAnswer = table.getElementsByTagName("tr")[rowId-1];
+      console.log(rowId);
+      
+      res = "Question Number: " + questionAnswer.cells[0].innerHTML;
+      res += "\nAnswer Number " + this.innerHTML;
+      console.log(res);
+    };
   }
-  return table;
 }
-document.getElementById("table").appendChild(makeTable(null, 10, 10, " "));
 
-function selectCell(table) {
-  var table = document.getElementById("table");
-  for (var i = 0; i < table.rows.length; i++) {
-    table.rows[i].addEventListener("click", function () {
-      var msg = "Selected Cell: ";
-      for (var j = 0; j < this.cells.length; j++) {
-        msg += this.cells[j].innerHTML;
-      }
-    });
-  } 
-} 
 
-function showResult(result) {
-  var table = document.getElementById("table");
-  table.addEventListener("click", function () {
-    var result = document.getElementById("result");
-    result.innerHTML;
-  });
-  return(result);
-}
+
+// var rowsNotSelected = table.getElementsByTagName("tr");
+// for (var row = 0; row < rowsNotSelected.length; row++) {
+//   rowsNotSelected[row].style.backgroundColor = "";
+//   rowsNotSelected[row].classList.remove("selected");
+// }
+
+// rowSelected.style.backgroundColor = "yellow";
+// rowSelected.className += " selected";
+
+// var table = document.getElementById("table");
+
+// if (table) {
+//   for (var i = 0; i < table.rows.length; i++) {
+//     table.rows[i].onclick = function() {
+//       tableText(this);
+//     };
+//   }
+// }
+
+// function tableText(tableRow) {
+//   var q = tableRow.childNodes[1].innerHTML;
+//   var a = tableRow.childNodes[4].innerHTML;
+//   var obj = {'Question No': q, 'answer': a};
+
+//   console.log(obj);
+// }
+
+// function showResult(result) {
+//   table.addEventListener("click", function () {
+//     var result = document.getElementById("result");
+//     result.innerHTML;
+//   });
+//   return(result);
+// }
+
+// function makeTable(table, rows, cells, content) {
+//   if (!table) table = document.createElement("table");
+//   for (var i = 0; i < rows; ++i) {
+//     var row = document.createElement("tr");
+//     for (var j = 0; j < cells; ++j) {
+//       row.appendChild(document.createElement("td"));
+//       row.cells[j].appendChild(document.createTextNode(content + (i + 1)));
+//     }
+//     table.appendChild(row);
+//   }
+//   return table;
+// }
+// document.getElementById("table").appendChild(makeTable(null, 10, 10, " "));
+
+// function selectCell(table) {
+//   var table = document.getElementById("table");
+//   for (var i = 0; i < table.rows.length; i++) {
+//     table.rows[i].addEventListener("click", function () {
+//       var msg = "Selected Cell: ";
+//       for (var j = 0; j < this.cells.length; j++) {
+//         msg += this.cells[j].innerHTML;
+//       }
+//     });
+//   }
+// }
 
 // var table = document.getElementById('table');
 // var cells = table.getElementsByTagName("td");

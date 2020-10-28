@@ -3,17 +3,33 @@ body {
 }
 
 tr,
-td {
+td,
+th {
   border: 1px solid black;
   text-align: center;
 }
-td {
+th {
   background-color: rgb(130, 233, 130);
-  height: 30px;
+  height: 50px;
+  width: 40px;
+  text-align:center;
+  vertical-align:middle;
+  font-family:'Arial', 'Halvetica';
+  font-weight:bold;
+}
+
+td {
+    width:40px;
+    height:40px;
+    background-color: rgb(130, 233, 130);
+    text-align:center;
+    vertical-align:middle;
+    font-family:'Arial', 'Halvetica';
+    font-weight:bold;
 }
 
 td:hover {
-  background-color: rgb(126, 230, 41);
+  background-color:orange;
 }
 
 table {
@@ -21,4 +37,5 @@ table {
   margin-top: 10px;
   width: 75%;
   height: 20px;
+  cursor: pointer;
 }
